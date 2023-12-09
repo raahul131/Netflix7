@@ -10,10 +10,12 @@ import {
 import Layout from "./Layout.tsx";
 import SignUp from "./components/auth/signup/SignUp.tsx";
 import Auth from "./components/auth/Auth.tsx";
+import BillBoard from "./billboard/BillBoard.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
+      <Route path="/" element={<BillBoard />} />
       <Route path="/signin" element={<Auth />} />
       <Route path="/signup" element={<SignUp />} />
     </Route>
