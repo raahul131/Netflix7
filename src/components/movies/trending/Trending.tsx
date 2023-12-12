@@ -32,7 +32,7 @@ const Trending = () => {
       <div className="flex overflow-x-scroll scroll-hide ml-4 md:ml-16 mt-3">
         <div className="flex flex-row gap-3">
           {trendingMovies.map((data) => (
-            <Link to={"/movie/" + data.id} key={data.id}>
+            <Link to={"/trendingmovie/" + data.id} key={data.id}>
               <Card title={data.original_title} poster={data.poster_path} />
             </Link>
           ))}
