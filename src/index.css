@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  @apply bg-zinc-900  h-full;
+  @apply bg-zinc-950  h-full;
 }
 
 html {
@@ -15,4 +15,8 @@ html {
 
 .scroll-hide::-webkit-scrollbar {
   display: none;
+}
+
+::selection {
+  color: rgb(193, 0, 0);
 }
