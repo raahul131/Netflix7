@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_OPTIONS } from "../../../utils/constants";
-import Card from "./Card";
 import { Link } from "react-router-dom";
+import Card from "../../common/Card";
 
 const Trending = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -16,7 +16,7 @@ const Trending = () => {
       .get(`https://api.themoviedb.org/3/movie/now_playing`, API_OPTIONS)
       .then((res) => {
         setTrendingMovies(res?.data?.results);
-        // console.log(res?.data?.results);
+        console.log(res?.data?.results);
       })
 
       .catch((err) => {
@@ -25,7 +25,7 @@ const Trending = () => {
   };
 
   return (
-    <div className="md:-mt-24 lg:-mt-44 lg:relative mt-40">
+    <div className="md:-mt-20 lg:-mt-36 lg:relative mt-40">
       <h1 className="text-white select-none px-4 md:px-16 text-base md:text-xl lg:text-2xl font-semibold">
         Trending
       </h1>
@@ -33,7 +33,7 @@ const Trending = () => {
         <div className="flex flex-row gap-3">
           {trendingMovies.map((data) => (
             <Link to={"/trendingmovie/" + data.id} key={data.id}>
-              <Card title={data.original_title} poster={data.poster_path} />
+              <Card title={data.original_title} poster={data.backdrop_path} />
             </Link>
           ))}
         </div>
