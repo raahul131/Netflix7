@@ -1,6 +1,11 @@
 import { IMG_CDN_URL } from "../../utils/constants";
 
-const Recomendation = ({ title, poster }) => {
+interface DetailsProps {
+  title: string;
+  poster: string;
+}
+
+const Recomendation = ({ title, poster }: DetailsProps) => {
   return (
     <div className="min-w-[208px]">
       <img

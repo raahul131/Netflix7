@@ -20,7 +20,7 @@ const VideoTitle = () => {
     const json = await data.json();
 
     if (json.results && json.results.length > 0) {
-      const randomIndex = Math.floor(Math.random() * json.results.length);
+      // const randomIndex = Math.floor(Math.random() * json.results.length);
       const randomMovie = json.results[3];
       setMovie(randomMovie);
       // console.log(randomMovie);

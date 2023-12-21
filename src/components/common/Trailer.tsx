@@ -19,14 +19,14 @@ const Trailer = () => {
     );
     const json = await data?.json();
     const filterData = json?.results?.filter(
-      (video) => video.type === "Trailer"
+      (video: { type: string }) => video.type === "Trailer"
     );
     const trailer = filterData?.length ? filterData[0] : json?.results[0];
     setTrailerId(trailer?.key);
     // console.log(trailer);
   };
 
-  const opts: YouTubeProps["opts"] = {
+  const opts = {
     width: "1300",
     height: "560",
     playerVars: {

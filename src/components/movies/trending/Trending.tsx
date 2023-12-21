@@ -16,7 +16,7 @@ const Trending = () => {
       .get(`https://api.themoviedb.org/3/movie/now_playing`, API_OPTIONS)
       .then((res) => {
         setTrendingMovies(res?.data?.results);
-        console.log(res?.data?.results);
+        // console.log(res?.data?.results);
       })
 
       .catch((err) => {
@@ -25,7 +25,7 @@ const Trending = () => {
   };
 
   return (
-    <div className="md:-mt-20 lg:-mt-36 lg:relative mt-40">
+    <div className="md:-mt-10 lg:-mt-24 lg:relative mt-40">
       <h1 className="text-white select-none px-4 md:px-16 text-base md:text-xl lg:text-2xl font-semibold">
         Trending
       </h1>

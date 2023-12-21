@@ -1,38 +1,11 @@
-// import { useEffect, useState } from "react";
-// import { API_OPTIONS } from "../../../../utils/constants";
-
-// const DetailVideo = ({ detailId }) => {
-//   const [trailerId, setTrailerId] = useState(null);
-
-//   useEffect(() => {
-//     getMovieVideos();
-//   }, [trailerId]);
-
-//   const getMovieVideos = async () => {
-//     const data = await fetch(
-//       "https://api.themoviedb.org/3/movie/" +
-//         detailId +
-//         "/videos?language=en-US",
-//       API_OPTIONS
-//     );
-//     const json = await data?.json();
-//     const filterData = json?.results?.filter(
-//       (video) => video.type === "Trailer"
-//     );
-//     const trailer = filterData?.length ? filterData[0] : json?.results[0];
-//     setTrailerId(trailer?.key);
-//     console.log(trailer);
-//   };
-
-//   return <div>DetailVideo</div>;
-// };
-
-// export default DetailVideo;
-
 import { useEffect, useState } from "react";
 import { API_OPTIONS } from "../../../../utils/constants";
 
-const DetailVideo = ({ detailId }) => {
+interface DetailsProps {
+  detailId: string;
+}
+
+const DetailVideo = ({ detailId }: DetailsProps) => {
   const [trailerId, setTrailerId] = useState(null);
 
   useEffect(() => {
@@ -50,7 +23,7 @@ const DetailVideo = ({ detailId }) => {
       // Check if json and json.results are defined
       if (json && json.results) {
         const filterData = json.results.filter(
-          (video) => video.type === "Trailer"
+          (video: { type: string }) => video.type === "Trailer"
         );
 
         // Check if filterData is not empty

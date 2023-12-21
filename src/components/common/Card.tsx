@@ -1,6 +1,11 @@
 import { IMG_CDN_URL } from "../../utils/constants";
 
-const Card = ({ title, poster }) => {
+interface ComponentsProps {
+  title: string;
+  poster: string;
+}
+
+const Card = ({ title, poster }: ComponentsProps) => {
   return (
     <div className="relative w-52">
       <img
