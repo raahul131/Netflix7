@@ -1,28 +1,35 @@
-import { useFormik } from "formik";
+import React from "react";
+import { useFormik, FormikHelpers } from "formik";
 import { Link } from "react-router-dom";
 import { SignUpSchema } from "../../../utils/Schema";
 
-const initialValues = {
+interface SignUpFormValues {
+  name: string;
+  email: string;
+  password: string;
+}
+
+const initialValues: SignUpFormValues = {
   name: "",
   email: "",
   password: "",
 };
 
-const onSubmit = (values, actions) => {
+const onSubmit = (
+  values: SignUpFormValues,
+  actions: FormikHelpers<SignUpFormValues>
+) => {
   console.log(values);
   actions.resetForm();
 };
 
-const SignUpForm = () => {
+const SignUpForm: React.FC = () => {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
-      initialValues: initialValues,
+      initialValues,
       validationSchema: SignUpSchema,
       onSubmit,
     });
-
-  // console.log(errors);
-  // console.log(values);
 
   return (
     <>
