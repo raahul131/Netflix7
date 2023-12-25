@@ -27,7 +27,7 @@ const PopularMovies = () => {
   return (
     <div className="mt-3">
       <h1 className="px-4 text-base font-semibold text-white select-none md:px-16 md:text-xl lg:text-2xl">
-        Popular
+        Popular on Netflix
       </h1>
       <div className="flex mt-3 ml-4 overflow-x-scroll scroll-hide md:ml-16">
         <div className="flex flex-row-reverse gap-3">
