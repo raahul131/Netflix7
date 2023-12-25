@@ -155,9 +155,9 @@ const Details = () => {
         <div className="flex flex-row gap-3 pt-2 overflow-x-scroll cursor-pointer scroll-hide scroll-smooth">
           {similar.map((data) => (
             <Related
-              key={data.id}
-              title={data.title}
-              poster={data.backdrop_path}
+              key={data?.id}
+              title={data?.title}
+              poster={data?.backdrop_path}
             />
           ))}
         </div>
@@ -169,7 +169,11 @@ const Details = () => {
         </h1>
         <div className="relative flex flex-row gap-3 pt-2 overflow-x-scroll cursor-pointer scroll-hide scroll-smooth">
           {recomendation.map((data) => (
-            <Recomendation title={data.title} poster={data.backdrop_path} />
+            <Recomendation
+              key={data?.id}
+              title={data?.title}
+              poster={data?.backdrop_path}
+            />
           ))}
         </div>
       </div>
