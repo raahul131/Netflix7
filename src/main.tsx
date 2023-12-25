@@ -13,7 +13,7 @@ import Auth from "./components/auth/Auth.tsx";
 import BillBoard from "./components/billboard/BillBoard.tsx";
 import Details from "./components/common/Details.tsx";
 import Trailer from "./components/common/Trailer.tsx";
-import TVDetails from "./components/details/tv details/TVDetails.tsx";
+import TVDetails from "./components/common/TVDetails.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
