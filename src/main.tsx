@@ -13,6 +13,7 @@ import Auth from "./components/auth/Auth.tsx";
 import BillBoard from "./components/billboard/BillBoard.tsx";
 import Details from "./components/common/Details.tsx";
 import Trailer from "./components/common/Trailer.tsx";
+import TVDetails from "./components/details/tv details/TVDetails.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,9 @@ const router = createBrowserRouter(
       <Route path="/topratedmovie/:id" element={<Details />} />
       <Route path="/popularmovie/:id" element={<Details />} />
       <Route path="/trailer/:id" element={<Trailer />} />
+      <Route path="/airingTodaySeries/:id" element={<TVDetails />} />
+      <Route path="/popularseries/:id" element={<TVDetails />} />
+      <Route path="/topratedseries/:id" element={<TVDetails />} />
       <Route path="/signin" element={<Auth />} />
       <Route path="/signup" element={<SignUp />} />
     </Route>
