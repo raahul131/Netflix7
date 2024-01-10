@@ -163,7 +163,7 @@ const TVDetails = () => {
           Some Images
         </h1>
         <div className="grid md:grid-cols-6 grid-cols-3 gap-3 ">
-          {photos.backdrops.map((data) => (
+          {photos.backdrops.slice(0, 6).map((data) => (
             <div key={data?.file_path}>
               <img
                 src={IMG_CDN_URL + data?.file_path}
