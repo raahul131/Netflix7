@@ -30,7 +30,7 @@ const VideoTitle = () => {
   if (!movie) {
     return (
       <div>
-        <p className="text-white">Loading...</p>
+        <p className="text-white"></p>
       </div>
     );
   }
